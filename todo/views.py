@@ -36,6 +36,22 @@ def todo_create(request):
     else:
         return render(request,'todo/todo_create.html')
         
+def update(request, id):
+    todo = Todo.objects.get(id=id)
+    if request.method == "POST":
+        # 저장로직
+        todo.title = request.POST.get('title')
+        todo.deadline = request.POST.get('deadline')
+        todo.save()
+        return redirect('/todos/')
+    else:
+        # 폼보여주기
+        deadline = todo.deadline.strftime("%Y-%m-%d")
+        # deadline = "{}-{}-{}".format(todo.deadline.year,todo.deadline.month,todo.deadline.day)
+        return render(request,'todo/update.html',{'todo':todo,'deadline':deadline})
     
+
+def delete(request,id):
+    pass
     
     

@@ -3,4 +3,6 @@
 {% block body_block %}
     <h1>{{todo.title}}</h1>
     <h4>{{todo.deadline}}</h4>
+    <a href="/todos/{{todo.id}}/update">수정</a>
+    <a href="/todos/{{todo.id}}/delete">삭제</a>
 {% endblock %}
