@@ -8,5 +8,6 @@ urlpatterns = [
     path('new/',views.new),
     path('create/',views.create),
     path('<int:id>/',views.read),
+    path('todo_create/',views.todo_create),
     
 ]

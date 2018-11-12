@@ -25,7 +25,17 @@ def read(request,id):
     todo = Todo.objects.get(id=id)
     return render(request,'todo/read.html',{'todo':todo})
     
-
+def todo_create(request):
+    if request.method == "POST":
+        title = request.POST.get('title')
+        deadline = request.POST.get('deadline')
+        # todo = Todo(title=title,deadline=deadlin)
+        # todo.save()
+        Todo.objects.create(title=title,deadline=deadline)
+        return redirect('/todos/')
+    else:
+        return render(request,'todo/todo_create.html')
+        
     
     
     
