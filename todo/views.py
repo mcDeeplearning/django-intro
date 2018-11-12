@@ -20,7 +20,12 @@ def create(request):
     todo.save()
      
     return redirect('/todos/')
+
+def read(request,id):
+    todo = Todo.objects.get(id=id)
+    return render(request,'todo/read.html',{'todo':todo})
     
+
     
     
     
