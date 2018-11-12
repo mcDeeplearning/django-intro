@@ -6,5 +6,5 @@ urlpatterns = [
     # 이 아래 들어가는 url들의 앞에 todos/가 생략
     path('',views.index), 
     path('new/',views.new),
-    path('create/')
+    path('create/',views.create),
 ]
