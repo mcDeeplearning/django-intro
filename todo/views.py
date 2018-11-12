@@ -52,6 +52,10 @@ def update(request, id):
     
 
 def delete(request,id):
-    pass
+    todo = Todo.objects.get(id=id)
+    todo.delete()
+    
+    return redirect('/todos/')
+    
     
     
